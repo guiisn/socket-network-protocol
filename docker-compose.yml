@@ -1,0 +1,16 @@
+version: '3'
+
+services:
+  server:
+    build: .
+    ports:
+      - "3000:3000"
+    networks:
+      - socketio-net
+  client:
+    build: .
+    networks:
+      - socketio-net
+
+networks:
+  socketio-net:
