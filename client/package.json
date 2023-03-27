@@ -4,8 +4,7 @@
   "main": "index.js",
   "license": "MIT",
   "scripts": {
-    "server": "nodemon ./src/server/index.js",
-    "client": "nodemon ./src/client/index.js"
+    "client": "nodemon ./src/index.js"
   },
   "devDependencies": {
     "net": "^1.0.2",
