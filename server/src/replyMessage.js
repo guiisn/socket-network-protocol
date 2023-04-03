@@ -8,6 +8,14 @@ function replyMessage(message) {
     try {
         const JSONMessage = JSON.parse(JSON.parse(message))
 
+        if (!operations.includes(JSONMessage.operation)) {
+            return { "error": requestErrors.invalidOperation, "message": "Invalid operation" }
+        }
+
+        if (!operations.includes(JSONMessage.table)) {
+            return { "error": requestErrors.nonExistentTable, "message": "Table does not exists" }
+        }
+
         if (JSONMessage.operation === 'POST') {
             if (users.includes(JSONMessage.key)) {
                 return { "error": requestErrors.existingRegister, "message": "User already exist" }
