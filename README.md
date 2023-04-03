@@ -83,3 +83,29 @@ Saída esperada:
 ```
 {"error":900,"message":"Internal server error."}
 ```
+
+## Casos em que a requisição retornará um status 404, ou seja, operação inválida
+
+Entrada:
+
+```
+{"operation": "invalidOperation", "table": "users", "key": "Guilherme"}
+```
+
+Saída esperada:
+```
+{"error":404,"message":"Invalid operation"}
+
+```
+## Casos em que a requisição retornará um status 400, ou seja, tabela inexistente
+
+Entrada:
+
+```
+{"operation": "REMOVE", "table": "table", "key": "Guilherme"}
+```
+
+Saída esperada:
+```
+{"error":400,"message":"Table does not exists"}
+```
